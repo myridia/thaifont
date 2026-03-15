@@ -6,21 +6,22 @@
     <title>Custom Font Example</title>
     <style>
         @font-face {
-            font-family: 'Myridiai'; /* Choose a name for your font */
-            src: url('Myridiai-Normal.otf') format('opentype'); /* Path to your font file */
+            font-family: 'Myridia'; /* Choose a name for your font */
+            src: url('Myridia-Normal.otf') format('opentype'); /* Path to your font file */
             font-weight: normal;
             font-style: normal;
         }
 
         body {
-            font-family: 'Myridiai', sans-serif; /* Use the font in your body */
+            font-family: 'Myridia', sans-serif; /* Use the font in your body */
             font-size: 16px;
             line-height: 1.6;
             margin: 20px;
         }
 
+        .bebe,
         h1 {
-            font-family: 'Myridiai', sans-serif;
+            font-family: 'Myridia', sans-serif;
             font-size: 2.5em;
             margin-bottom: 0.5em;
         }
@@ -32,15 +33,50 @@
 </head>
 <body>
 
-    <h1>Welcome to My Website</h1>
+<h1>ยินดีต้อนรับสู่หน้าฟอนต์ Myridia</h1>
+<p>ข้อความนี้ใช้ฟอนต์ Myridia ซึ่งเป็นฟอนต์แบบกำหนดเองที่ฝังไว้โดยใช้ CSS โปรดตรวจสอบให้แน่ใจว่าไฟล์ฟอนต์อยู่ในไดเร็กทอรีเดียวกันกับไฟล์ HTML นี้ หรือปรับเส้นทาง `src: url()` ให้เหมาะสม</p>
 
-    <p>This text is using the Myridiai font.  It's a custom font embedded using CSS.  Make sure the font file is in the same directory as this HTML file, or adjust the `src: url()` path accordingly.</p>
+<p>นี่คือย่อหน้าอีกย่อหน้าหนึ่งเพื่อแสดงให้เห็นถึงฟอนต์เพิ่มเติม คุณสามารถจัดรูปแบบองค์ประกอบด้วยฟอนต์นี้ได้เช่นเดียวกับฟอนต์อื่นๆ</p>
 
-    <p>Here's another paragraph to demonstrate the font further.  You can style elements with this font just like any other font.</p>
+<h2>หัวข้อขนาดเล็กกว่า</h2>
+<p>หัวข้อนี้ก็ใช้ฟอนต์ Myridia เช่นกัน แต่มีขนาดเล็กกว่า</p>
 
-    <h2>A Smaller Heading</h2>
 
-    <p>This heading is also using the Myridiai font, but with a smaller size.</p>
+<p class="bebe">
+ติ่น แล้ว หรือ จ๊ะ 
+มา มะ ลูก จํา
+อุม หนู ขึ้น มา
+กอด ไว้ แนบ กาย
+
+หิว ใช้ ไหม จ๊ะ
+กิน นะ กิน นม
+สบาย อารมณ์
+อม ท้อง อุน ใจ
+
+แน่น ท้อง แน่ แน่
+แม อัมพา ดบํา
+ลูบ หลัง ไป มา
+หนู เรอ ดํง “เอก”
+
+ตึงตัง ตึงตัง
+ลยง ดัง ตกใจ
+แม่ กอด หน ไว้
+ขวัญ เอย ขวัญ มา
+
+เคลือนไหว ไม่ ถนัด
+อดอัด ขัด ใจ
+พอ อุ้ม หนู ไว้
+พา ไป เดิน เล่น
+
+แม เช้ด ล้าง ให้
+เปลียน ผ้าอ้อม ใหม่
+แห้ง สบาย ตัว
+
+หรีตางวง หาว
+แม่ กล่อม เข้า นอน
+หนุน แขน แทน หมอน
+นอน หลับ ฝัน ดิ
+<p>
 
 </body>
 </html>
