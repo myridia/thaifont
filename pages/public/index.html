@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Font Example</title>
+    <style>
+        @font-face {
+            font-family: 'Myridiai'; /* Choose a name for your font */
+            src: url('Myridiai-Normal.otf') format('opentype'); /* Path to your font file */
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Myridiai', sans-serif; /* Use the font in your body */
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1 {
+            font-family: 'Myridiai', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to My Website</h1>
+
+    <p>This text is using the Myridiai font.  It's a custom font embedded using CSS.  Make sure the font file is in the same directory as this HTML file, or adjust the `src: url()` path accordingly.</p>
+
+    <p>Here's another paragraph to demonstrate the font further.  You can style elements with this font just like any other font.</p>
+
+    <h2>A Smaller Heading</h2>
+
+    <p>This heading is also using the Myridiai font, but with a smaller size.</p>
+
+</body>
+</html>
