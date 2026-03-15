@@ -7,13 +7,6 @@ This Thai Font highlights vocals from consonants
 * Demo: https://thaifont.myridia.com/
 
 
-[![GitHub stars](https://img.shields.io/github/stars/myridia/thaifont?style=social)](https://github.com/myridia/thaifont/stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/myridia/thaifont)](https://github.com/myridia/thaifont/issues)
-[![GitHub license](https://img.shields.io/github/license/myridia/thaifont)](https://github.com/myridia/thaifont/blob/main/LICENSE)
-
-Welcome to ThaiFont! This project provides a unique font designed to help you learn to read Thai script by highlighting the vocal sounds within the words.  It's a visual aid to bridge the gap between spoken and written Thai.
-
-# ThaiFont: A Font for Vocal Highlighting and Thai Script Learning
 
 [![GitHub stars](https://img.shields.io/github/stars/myridia/thaifont?style=social)](https://github.com/myridia/thaifont/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/myridia/thaifont)](https://github.com/myridia/thaifont/issues)
