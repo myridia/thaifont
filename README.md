@@ -1,4 +1,8 @@
+# ![thaifont](pages/public/img/icon_192x192.png) 
+
 # ThaiFont: A Font for Vocal Highlighting and Thai Script Learning
+
+
 
 This Thai Font highlights vocals from consonants 
 
