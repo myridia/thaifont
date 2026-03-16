@@ -2,14 +2,10 @@
 .appVersion = "3306";
 .formatVersion = 3;
 DisplayStrings = (
-M,
-"â",
-"ä",
-I,
-i,
-"ข",
-"",
-"/CR"
+"/uni0000",
+"/uni00A0",
+"฾",
+"อ"
 );
 customParameters = (
 {
@@ -14203,8 +14199,12 @@ unicode = 111;
 },
 {
 glyphname = oAngthai;
+lastChange = "2026-03-16 01:21:17 +0000";
 layers = (
 {
+attr = {
+colorPalette = 1;
+};
 layerId = m01;
 shapes = (
 {
@@ -22084,9 +22084,19 @@ unicode = 95;
 },
 {
 glyphname = uni0000;
+lastChange = "2026-03-16 01:13:49 +0000";
 layers = (
 {
 layerId = m01;
+width = 0;
+},
+{
+associatedMasterId = m01;
+attr = {
+colorPalette = 1;
+};
+layerId = "1F77E9C1-1344-43BA-9119-97A1A0CA6C80";
+name = "16 Mar 69 BE at 08:13";
 width = 0;
 }
 );
