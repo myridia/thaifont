@@ -17,6 +17,19 @@ Pick one file or install several — the steps are identical per file.
 > README). Installation below is for the desktop or for apps that read system
 > fonts.
 
+## Quick install (Linux & macOS)
+
+```sh
+curl --proto '=https' --tlsv1.2 -fsSL https://thaifont.myridia.com/install.sh | sh
+```
+
+Installs the latest `Myridia-Normal.otf` per-user and activates it. No script
+needed — this single command does the same on Linux:
+
+```sh
+mkdir -p ~/.local/share/fonts && curl -fsSL https://github.com/myridia/thaifont/releases/download/main/Myridia-Normal.otf -o ~/.local/share/fonts/Myridia-Normal.otf && fc-cache -f
+```
+
 ## 1. Get the font files
 
 ### Option A — clone the repository
@@ -26,14 +39,14 @@ git clone https://github.com/myridia/thaifont.git
 cd thaifont
 ```
 
-### Option B — download the latest release
+### Option B — download the release
 
-New builds of Myridia are published as GitHub Releases. The URL below always
-points to the newest one and needs no tag:
+New builds of Myridia are published to a release tagged `main` on every push.
+The URL below always points to the newest build:
 
 ```sh
 mkdir -p thaifont && cd thaifont
-curl -Lo Myridia-Normal.otf https://github.com/myridia/thaifont/releases/latest/download/Myridia-Normal.otf
+curl -Lo Myridia-Normal.otf https://github.com/myridia/thaifont/releases/download/main/Myridia-Normal.otf
 ```
 
 (JS-Synjai isn't published to releases yet — get `JS-Synjai-Normal.otf` from the

@@ -102,6 +102,7 @@ pages/
     wordlist.js              Thai wordlist (array)
     dict.txt                 Wordlist source text
     convert.sh               Wordlist -> wordlist.js converter
+    install.sh               One-line installer (`curl ... | sh`)
     Myridia-Normal.otf       Demo font copy
     img/                     Site icons
 dockers/                     Local nginx that serves pages/public (HTTPS-ready)
