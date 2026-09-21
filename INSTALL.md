@@ -26,16 +26,19 @@ git clone https://github.com/myridia/thaifont.git
 cd thaifont
 ```
 
-### Option B — download individual files only
+### Option B — download the latest release
+
+New builds of Myridia are published as GitHub Releases. The URL below always
+points to the newest one and needs no tag:
 
 ```sh
 mkdir -p thaifont && cd thaifont
-curl -LO https://raw.githubusercontent.com/myridia/thaifont/main/Myridia-Normal.otf
-curl -LO https://raw.githubusercontent.com/myridia/thaifont/main/JS-Synjai-Normal.otf
+curl -Lo Myridia-Normal.otf https://github.com/myridia/thaifont/releases/latest/download/Myridia-Normal.otf
 ```
 
-(The demo copy used by the web page lives at `pages/public/Myridia-Normal.otf`
-and is only needed for the demo, not for installing.)
+(JS-Synjai isn't published to releases yet — get `JS-Synjai-Normal.otf` from the
+repo itself, see Option A. The demo copy `pages/public/Myridia-Normal.otf` is
+only needed for the web demo, not for installing.)
 
 ## 2. Debian / Ubuntu (and most other Linux)
 
