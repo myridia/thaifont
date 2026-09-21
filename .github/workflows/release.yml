@@ -6,6 +6,7 @@ on:
      - "*"
   workflow_dispatch:
 
+
 permissions:
   contents: write
 
@@ -14,10 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
+      - name: Release
+        if: github.repository_owner == 'myridia'
+        uses: svenstaro/upload-release-action@v2
         with:
-          files: Myridia-Normal.otf
-          generate_release_notes: true
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: 'Myridia-Normal.otf'
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true
