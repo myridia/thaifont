@@ -3,19 +3,21 @@ name: Release
 on:
   push:
     branches:
-     - "*"
+      - "main"
+    tags:
+      - "*"
   workflow_dispatch:
-
 
 permissions:
   contents: write
 
 jobs:
-  release:
+  release_font:
+    if: github.repository_owner == 'myridia'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Release
         if: github.repository_owner == 'myridia'

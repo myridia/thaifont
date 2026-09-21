@@ -26,14 +26,14 @@ git clone https://github.com/myridia/thaifont.git
 cd thaifont
 ```
 
-### Option B — download the latest release
+### Option B — download the release
 
-New builds of Myridia are published as GitHub Releases. The URL below always
-points to the newest one and needs no tag:
+New builds of Myridia are published to a release tagged `main` on every push.
+The URL below always points to the newest build:
 
 ```sh
 mkdir -p thaifont && cd thaifont
-curl -Lo Myridia-Normal.otf https://github.com/myridia/thaifont/releases/latest/download/Myridia-Normal.otf
+curl -Lo Myridia-Normal.otf https://github.com/myridia/thaifont/releases/download/main/Myridia-Normal.otf
 ```
 
 (JS-Synjai isn't published to releases yet — get `JS-Synjai-Normal.otf` from the
@@ -42,10 +42,27 @@ only needed for the web demo, not for installing.)
 
 ## 2. Debian / Ubuntu (and most other Linux)
 
-You have two choices: **per-user** (your login only, no root, recommended for
-single machines) or **system-wide** (every user on the machine, needs `sudo`).
+You have four installation options: Linux/macOS/FreeBSD get the one-line
+installer (recommended) plus the manual per-user/system-wide methods; Windows
+gets its own PowerShell installer.
 
-### 2a. Per-user install
+### 2a. One-line installer (recommended — Linux, macOS, FreeBSD)
+
+```sh
+curl --proto '=https' --tlsv1.2 -fsSL https://thaifont.myridia.com/install.sh | sh
+```
+
+Installs the latest `Myridia-Normal.otf` for the current user and activates it
+(rebuilds the font cache on Linux/FreeBSD; on macOS it installs into
+`~/Library/Fonts`).
+
+Don't want to pipe a script? This single command does the same on Linux:
+
+```sh
+mkdir -p ~/.local/share/fonts && curl -fsSL https://github.com/myridia/thaifont/releases/download/main/Myridia-Normal.otf -o ~/.local/share/fonts/Myridia-Normal.otf && fc-cache -f
+```
+
+### 2b. Per-user install
 
 ```sh
 mkdir -p ~/.local/share/fonts
@@ -53,7 +70,7 @@ cp Myridia-Normal.otf JS-Synjai-Normal.otf ~/.local/share/fonts/
 fc-cache -fv ~/.local/share/fonts
 ```
 
-### 2b. System-wide install
+### 2c. System-wide install
 
 ```sh
 sudo mkdir -p /usr/local/share/fonts/thaifont
@@ -64,11 +81,15 @@ sudo fc-cache -fv
 > Legacy: `~/.fonts` still works but is deprecated — prefer
 > `~/.local/share/fonts` for new installs.
 
-## 3. Other Linux distributions
+## 3. Other Unix-like systems (Fedora, Arch, openSUSE, FreeBSD)
 
 The same XDG paths used above apply on **Fedora**, **Arch Linux**, **openSUSE**,
-etc. Only package-manager-based font caches differ; the simplest reliable method
-is still `fc-cache -fv`.
+etc. — including the one-line installer from
+[2a](#2a-one-line-installer-recommended--linux-macos-freebsd).
+
+**FreeBSD** works identically: the installer shares the Linux branch and copies
+into `~/.local/share/fonts` (it runs `fc-cache` only when fontconfig is
+installed).
 
 Fedora example (system-wide):
 
@@ -82,6 +103,10 @@ There is no dedicated `dnf`/`apk`/`pacman` package for ThaiFont — installing t
 files as above is the supported way.
 
 ## 4. macOS
+
+The one-line installer from
+[2a](#2a-one-line-installer-recommended--linux-macos-freebsd) also works on
+macOS. Manual options:
 
 ### 4a. Font Book (recommended)
 
@@ -97,6 +122,19 @@ cp Myridia-Normal.otf JS-Synjai-Normal.otf ~/Library/Fonts/
 ```
 
 ## 5. Windows
+
+### 5a. One-line installer (recommended — PowerShell)
+
+In PowerShell (no admin required):
+
+```powershell
+iwr -useb https://thaifont.myridia.com/install.ps1 | iex
+```
+
+Installs the latest `Myridia-Normal.otf` into the Windows Fonts collection for
+the current user.
+
+### 5b. Manual install
 
 1. In File Explorer, **right-click** the `.otf` file and choose **Install**.
    * To install for all users, right-click → **Install for all users** (needs an
