@@ -10,6 +10,7 @@ a glance which part of a syllable is the vowel. It also ships a small web demo
 with a bundled Thai wordlist and a longest-match tokenizer.
 
 * Live demo: <https://thaifont.myridia.com/>
+* Desktop install guide: [INSTALL.md](INSTALL.md)
 
 ## The idea behind ThaiFont
 
