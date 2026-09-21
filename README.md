@@ -35,7 +35,7 @@ they stand out from consonants:
 | Family | File | Notes |
 | ------ | ---- | ----- |
 | Myridia | `pages/public/Myridia-Normal.otf` | Classic vocal-highlighting face, used by the demo and this README |
-| Myridiai | `Myridiai-Normal.otf` | Current export of the Myridia source |
+| Myridia | `Myridia-Normal.otf` | Current export of the Myridia source |
 | JS-Synjai | `JS-Synjai-Normal.otf` | Second family built from the same source |
 
 All three are OpenType (`.otf`) and self-hosting-friendly. The two files in the
@@ -92,7 +92,7 @@ The demo page loads the font, and tokenizes sample text to stdout.
 
 ```
 mx.glyphs                    Font source (Glyphs.app format)
-Myridiai-Normal.otf          Current font export
+Myridia-Normal.otf           Current font export
 JS-Synjai-Normal.otf         Second family export
 pages/
   public/                    GitHub Pages demo site (deployed automatically)
