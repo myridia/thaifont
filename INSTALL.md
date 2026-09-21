@@ -30,10 +30,12 @@ cd thaifont
 
 ```sh
 mkdir -p thaifont && cd thaifont
-curl -LO https://raw.githubusercontent.com/myridia/thaifont/main/pages/public/Myridia-Normal.otf
-curl -LO https://raw.githubusercontent.com/myridia/thaifont/main/Myridiai-Normal.otf
+curl -LO https://raw.githubusercontent.com/myridia/thaifont/main/Myridia-Normal.otf
 curl -LO https://raw.githubusercontent.com/myridia/thaifont/main/JS-Synjai-Normal.otf
 ```
+
+(The demo copy used by the web page lives at `pages/public/Myridia-Normal.otf`
+and is only needed for the demo, not for installing.)
 
 ## 2. Debian / Ubuntu (and most other Linux)
 
@@ -44,7 +46,7 @@ single machines) or **system-wide** (every user on the machine, needs `sudo`).
 
 ```sh
 mkdir -p ~/.local/share/fonts
-cp pages/public/Myridia-Normal.otf Myridiai-Normal.otf JS-Synjai-Normal.otf ~/.local/share/fonts/
+cp Myridia-Normal.otf JS-Synjai-Normal.otf ~/.local/share/fonts/
 fc-cache -fv ~/.local/share/fonts
 ```
 
@@ -52,7 +54,7 @@ fc-cache -fv ~/.local/share/fonts
 
 ```sh
 sudo mkdir -p /usr/local/share/fonts/thaifont
-sudo cp pages/public/Myridia-Normal.otf Myridiai-Normal.otf JS-Synjai-Normal.otf /usr/local/share/fonts/thaifont/
+sudo cp Myridia-Normal.otf JS-Synjai-Normal.otf /usr/local/share/fonts/thaifont/
 sudo fc-cache -fv
 ```
 
@@ -69,7 +71,7 @@ Fedora example (system-wide):
 
 ```sh
 sudo mkdir -p /usr/local/share/fonts/thaifont
-sudo cp Myridiai-Normal.otf JS-Synjai-Normal.otf /usr/local/share/fonts/thaifont/
+sudo cp Myridia-Normal.otf JS-Synjai-Normal.otf /usr/local/share/fonts/thaifont/
 sudo fc-cache -fv
 ```
 
@@ -88,7 +90,7 @@ files as above is the supported way.
 
 ```sh
 mkdir -p ~/Library/Fonts
-cp Myridiai-Normal.otf JS-Synjai-Normal.otf ~/Library/Fonts/
+cp Myridia-Normal.otf JS-Synjai-Normal.otf ~/Library/Fonts/
 ```
 
 ## 5. Windows
