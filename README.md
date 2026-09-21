@@ -1,111 +1,144 @@
-# ![thaifont](pages/public/img/icon_192x192.png) 
-
-# ThaiFont: A Font for Vocal Highlighting and Thai Script Learning
-
-This Thai Font highlights vocals from consonants 
-
-
-
+# ThaiFont
 
 [![GitHub stars](https://img.shields.io/github/stars/myridia/thaifont?style=social)](https://github.com/myridia/thaifont/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/myridia/thaifont)](https://github.com/myridia/thaifont/issues)
 [![GitHub license](https://img.shields.io/github/license/myridia/thaifont)](https://github.com/myridia/thaifont/blob/main/LICENSE)
 
-Welcome to ThaiFont! This project provides a unique font designed to help you learn to read Thai script by highlighting the vocal sounds within the words.  It's a visual aid to bridge the gap between spoken and written Thai.
+A font for **vocal highlighting and Thai script learning**. ThaiFont separates
+vowels and tone markers from their consonants visually, so beginners can see at
+a glance which part of a syllable is the vowel. It also ships a small web demo
+with a bundled Thai wordlist and a longest-match tokenizer.
 
-* Demo: https://thaifont.myridia.com/
+* Live demo: <https://thaifont.myridia.com/>
 
-## The Idea Behind ThaiFont
-Reading most human script is like singing musical notes. Learning to read Thai can be challenging. Thai script doesn't always explicitly represent all the vowel sounds, and these vowels can be positioned above, before, behind, or below the consonant. As well, tone markers are integrated within the script. ThaiFont aims to make the process easier by:
+## The idea behind ThaiFont
 
+Reading most scripts is like singing musical notes. Thai makes this harder at
+first because:
 
-*   **Visually Highlighting Vowels and Tone markers:** The font subtly emphasizes the vowel sounds in each word, making them easier to identify.
-*   **Improving Comprehension:** By connecting the written script with the spoken sounds, you can improve your reading comprehension and pronunciation.
-*   **Making Learning Fun:**  We believe that learning should be enjoyable! ThaiFont offers a fresh and engaging way to approach Thai script.
+* Vowels are not always written with explicit letters — they can sit above,
+  before, behind, or below the consonant.
+* Tone markers are integrated into the script.
+* Some vowel sounds are implied and unwritten.
 
+ThaiFont addresses this by **visually highlighting vowels and tone markers** so
+they stand out from consonants:
 
-## Example Usage
-* See the Example rendered here: 
+* **Visible vowels** — the vowel portion of each syllable is emphasized, making
+  it easier to identify.
+* **Better comprehension** — connecting the written script with the spoken
+  sounds improves reading comprehension and pronunciation.
+* **Learning-friendly** — a fresh, engaging way to approach Thai script.
+
+## Fonts included
+
+| Family | File | Notes |
+| ------ | ---- | ----- |
+| Myridia | `pages/public/Myridia-Normal.otf` | Classic vocal-highlighting face, used by the demo and this README |
+| Myridiai | `Myridiai-Normal.otf` | Current export of the Myridia source |
+| JS-Synjai | `JS-Synjai-Normal.otf` | Second family built from the same source |
+
+All three are OpenType (`.otf`) and self-hosting-friendly. The two files in the
+repository root are the most recent exports; `pages/public/` mirrors the demo
+copy.
+
+## Usage
+
+### In a website
+
+Serve the font with `@font-face`, then apply the family whenever you want Thai
+script rendered with vocal highlighting:
+
+```html
+<style>
+  @font-face {
+    font-family: "Myridia";
+    src: url("Myridia-Normal.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .thai {
+    font-family: "Myridia", "Noto Sans Thai", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+</style>
+
+<p class="thai">ติ่น แล้ว หรือ จ๊ะ มา มะ ลูก จํา อุม หนู ขึ้น มา</p>
 ```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Font Example</title>
-    <style>
-        @font-face {
-            font-family: 'Myridia'; /* Choose a name for your font */
-            src: url('Myridia-Normal.otf') format('opentype'); /* Path to your font file */
-            font-weight: normal;
-            font-style: normal;
-        }
 
-        body {
-            font-family: 'Myridia', sans-serif; /* Use the font in your body */
-            font-size: 16px;
-            line-height: 1.6;
-            margin: 20px;
-        }
+The CSS family name is yours to choose — it does not have to match the filename.
 
-        .bebe,
-        h1 {
-            font-family: 'Myridia', sans-serif;
-            font-size: 2.5em;
-            margin-bottom: 0.5em;
-        }
+### On the desktop
 
-        p {
-            margin-bottom: 1em;
-        }
-    </style>
-</head>
-<body>
+Download one of the `.otf` files and install it the normal way for your
+operating system (double-click → *Install*, or copy into `~/.fonts`/`~/Library/
+Fonts`/`C:\Windows\Fonts`).
 
+## Tokenizer demo
 
-<p class="bebe">
-ติ่น แล้ว หรือ จ๊ะ 
-มา มะ ลูก จํา
-อุม หนู ขึ้น มา
-กอด ไว้ แนบ กาย
-<p>
+Beyond the font itself, `pages/public/` bundles a small reading tool:
 
-</body>
-</html>
+* `wordlist.js` — a Thai wordlist as a JavaScript array.
+* `dict.txt` — the plain-text wordlist it was generated from.
+* `index.js` — a longest-match tokenizer that splits a Thai sentence into words
+  using the wordlist.
+* `convert.sh` — regenerates `wordlist.js` from a plain wordlist file.
+
+The demo page loads the font, and tokenizes sample text to stdout.
+
+## Project layout
 
 ```
+mx.glyphs                    Font source (Glyphs.app format)
+Myridiai-Normal.otf          Current font export
+JS-Synjai-Normal.otf         Second family export
+pages/
+  public/                    GitHub Pages demo site (deployed automatically)
+    index.html               Demo page
+    index.js                 Longest-match tokenizer
+    wordlist.js              Thai wordlist (array)
+    dict.txt                 Wordlist source text
+    convert.sh               Wordlist -> wordlist.js converter
+    Myridia-Normal.otf       Demo font copy
+    img/                     Site icons
+dockers/                     Local nginx that serves pages/public (HTTPS-ready)
+.github/workflows/pages.yml  Deploys pages/public to GitHub Pages on push
+```
 
+## Run it locally
 
-## Contributing
+Any static file server works, e.g.:
 
-ThaiFont is an open-source project, and we welcome contributions from anyone who wants to help improve it!  Here are a few ways you can contribute:
+```sh
+cd pages/public
+python3 -m http.server 8080
+```
 
-*   **Report Issues:** If you find any bugs or have suggestions for improvements, please open an issue in the [Issue Tracker](https://github.com/myridia/thaifont/issues).
-*   **Submit Pull Requests:**  If you're a font designer or developer, you can contribute directly by submitting pull requests with bug fixes, new features, or improvements to the font design.
-*   **Spread the Word:**  Share ThaiFont with your friends, classmates, or anyone else who is learning Thai!
-*   **Donate:** (Optional) If you find this project helpful, consider donating to support its development.  (Add your donation link here if you have one.)
+or use the provided nginx compose stack (HTTPS-ready, self-signed certs in
+`dockers/etc/nginx/conf.d/certs`):
+
+```sh
+cd dockers
+docker compose up
+```
+
+## Building the font
+
+The font design source lives in `mx.glyphs` (Glyphs format). The `.otf` files at
+the repository root are exports of that source; regenerate and re-export them if
+you change the glyphs. Editing the source requires Glyphs (or a compatible
+`.glyphs` editor).
 
 ## License
 
-This project is licensed under the **GNU General Public License v3.0** (GPLv3).  See the [LICENSE](LICENSE) file for details.  This license ensures that you have the freedom to use, share, and modify this font, as long as you also share any modifications under the same license.
+GPLv3 — see [LICENSE](LICENSE). You are free to use, share, and modify the font
+and its sources, provided derivative works keep the same license and are
+distributed with access to their source.
 
-## Important Considerations for GPLv3
+## Contributing
 
-Because this project is licensed under GPLv3, it's important to understand the implications:
-
-*   **Copyleft:** Any derivative works (modifications or adaptations of the font) must also be licensed under GPLv3. This ensures that the freedom to use, share, and modify the font is preserved in all its versions.
-*   **Attribution:**  You must provide appropriate attribution to the original authors of ThaiFont in any derivative works.
-*   **Distribution:**  If you distribute the font or any derivative works, you must provide access to the source code (the font design files).
-
-## Acknowledgements
-
-(Optional)  If you used any resources or were inspired by other projects, you can acknowledge them here.  For example:
-
-*   Thanks to [Example Thai Font Project] for inspiration.
-*   This project uses the [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?item_id=OFL) for some components.
-
-## Get Started Today!
-
-We hope that ThaiFont will be a valuable tool in your Thai language learning journey.  Download the font, start reading, and let us know what you think!  Happy learning!
-
-
+* **Report issues** via the [issue tracker](https://github.com/myridia/thaifont/issues) — bugs, missing glyphs, spacing issues.
+* **Submit pull requests** for font improvements, new glyphs, or demo/wordlist fixes.
+* **Spread the word** with anyone learning to read Thai.
